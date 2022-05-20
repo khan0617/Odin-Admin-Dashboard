@@ -35,7 +35,7 @@ img {
     width: 100%;
     grid-column: 2 / span 3;
     grid-row: 1 / 1;
-    background-color: rgba(232, 224, 224, 0.812);
+    background-color: white;
 }
 
 /* top row of the header styling below */
@@ -52,7 +52,7 @@ img {
     justify-self: flex-start;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 25px;
 }
 
 .search-left {
@@ -64,6 +64,10 @@ img {
 
 .searchbar {
     width: 65%;
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid darkgray;
+    background-color: rgb(215, 215, 215);
 }
 
 /* bottom row of header styling below */
@@ -89,7 +93,7 @@ img {
 .bottom-row .right {
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     gap: 30px;
     /* background-color: aquamarine; */
     padding-top: 15px;
@@ -108,6 +112,7 @@ img {
 
 .left .greeting {
     font-size: 16px;
+    font-weight: 700;
 }
 
 .username.big {
@@ -142,12 +147,17 @@ img {
 .sidebar .list-item {
     display: flex;
     align-items: center;
-    padding:  10px 0;
+    padding:  5px 0;
     margin: 20px 0;
     color: white;
     font-size: 18px;
     font-weight: 600;
     cursor: pointer;
+}
+
+.sidebar .list-item:hover{
+    font-size: larger;
+    text-decoration: underline;
 }
 
 .sidebar .list-item > div {
@@ -156,34 +166,52 @@ img {
 
 /* project card styling below */
 .projects {
-    background-color: rgb(254, 245, 234);
+    background-color: rgb(233, 233, 233);
     width: 100%;
     height: 100%;
     grid-column: 2 / span 2;
     grid-row: 2 / span 2;
-    padding: 20px;
+}
 
-
+.projects-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 45%));
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-auto-rows: minmax(300px ,45%); */
+    grid-auto-rows: 45%;
     gap: 20px;
+    padding: 20px 20px;
 }
 
 .projects > .title {
+    padding: 20px;
     font-size: 36px;
     font-weight: 700;
 }
 
 .card {
-    border: 1px solid black;
+    border: none;
+    border-radius: 8px;
     padding: 10px;
+    padding-bottom: 50px;
     position: relative;
+    background-color: white;
+    box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+    background-color: rgba(233, 233, 233, 0.829);
+    border: 1px solid rgb(17, 155, 253);
 }
 
 .card > .title {
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 15px;
+}
+
+.card > .content {
+    font-size: 14px;
 }
 
 .card > .icon-container {
@@ -195,4 +223,96 @@ img {
 
 .card > .icon-container > img {
     cursor: pointer;
+}
+
+/* Announcements styling */
+.announcements-container {
+    grid-column: 4 / 5;
+    grid-row: 2 / row span 1;
+
+    background-color: rgb(233, 233, 233);
+    padding: 20px 30px 20px 30px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 90%;
+}
+
+.announcements-container > .title {
+    grid-row: 1;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.announcements {
+    grid-row: 2 / 3;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.announcements .item {
+    padding-bottom: 10%;
+    border-radius: 8px;
+}
+
+.announcements .item:hover {
+    background-color: rgba(230, 230, 230, 0.897);
+}
+
+.announcements > .item > .title {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.announcements > .item > .content {
+    font-size: 13px;
+}
+
+.announcements > .item.one, .item.two {
+    border-bottom: 1px solid darkgrey;
+}
+
+
+/* Trending styling */
+.trending-container {
+    background-color: rgb(233, 233, 233);
+    grid-column: 4 / 5;
+    grid-row: 3 / span 1;
+    padding: 20px 30px 20px 30px;
+}
+
+.trending-container > .title {
+    grid-row: 1;
+    font-size: 24px;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+.trending {
+    box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.trending > .item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 20px;
+    padding-bottom: 5px;
+    gap: 20px;
+}
+
+.trending > .item:hover {
+    background-color: rgba(230, 230, 230, 0.897);
 }
