@@ -34,18 +34,14 @@ img {
 .header {
     width: 100%;
     grid-column: 2 / span 3;
-    grid-row: 1;
-    display: flex;
+    grid-row: 1 / 1;
+    background-color: rgba(232, 224, 224, 0.812);
 }
-
-.search-container {
-    width: 100%
-}
-
 
 /* top row of the header styling below */
 .top-row {
-    background-color: aqua;
+    height: auto;
+    /* background-color: aqua; */
     display: grid;
     padding: 10px;
     grid-template-columns: 60% 40%;
@@ -73,19 +69,21 @@ img {
 /* bottom row of header styling below */
 .bottom-row {
     width: 100%;
+    height: auto;
     display: grid;
     grid-template-columns: 60% 40%;
 }
 
 .bottom-row .left {
-    background-color: brown;
+    width: 100%;
+    /* background-color: brown; */
     display: flex;
     align-items: center;
     padding-left: 5%;
     gap: 25px;
-    line-height: 0.2em;
     padding-top: 15px;
     padding-bottom: 15px;
+    overflow-wrap: break-word;
 }
 
 .bottom-row .right {
@@ -93,7 +91,7 @@ img {
     align-items: center;
     justify-content: center;
     gap: 30px;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     padding-top: 15px;
     padding-bottom: 15px;
 }
@@ -120,6 +118,7 @@ img {
 
 /* sidebar on left styling below */
 .sidebar {
+    word-break: break-all;
     height: 100%;
     width: 100%;
     grid-column: 1 / 2;
@@ -143,13 +142,57 @@ img {
 .sidebar .list-item {
     display: flex;
     align-items: center;
-    padding:  10px;
+    padding:  10px 0;
     margin: 20px 0;
     color: white;
     font-size: 18px;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .sidebar .list-item > div {
     margin-left: 10px;
+}
+
+/* project card styling below */
+.projects {
+    background-color: rgb(254, 245, 234);
+    width: 100%;
+    height: 100%;
+    grid-column: 2 / span 2;
+    grid-row: 2 / span 2;
+    padding: 20px;
+
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 45%));
+    gap: 20px;
+}
+
+.projects > .title {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.card {
+    border: 1px solid black;
+    padding: 10px;
+    position: relative;
+}
+
+.card > .title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.card > .icon-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+}
+
+.card > .icon-container > img {
+    cursor: pointer;
 }
